@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JCheckBox;
@@ -32,14 +34,12 @@ public class WeightConv extends JFrame {
         a2.setText(Double.toString(ounce));
       }
 
-
       // this is not correct, needs to be pushed back in decimal places, formatted
       if (gram1.isSelected() && stone2.isSelected()) {
         double stone = d / 6350;
         a2.setText(Double.toString(stone));
       }
       // this is not correct, needs to be pushed back in decimal places, formatted
-
 
       if (kg1.isSelected() && gram2.isSelected()) {
         double gram = d * 1000;
@@ -117,14 +117,9 @@ public class WeightConv extends JFrame {
       if (stone1.isSelected() && stone2.isSelected()) {
         a2.setText(s);
       }
-
     }
-
   }
 
-
-
-  
   JButton b;
   JTextArea a2;
   JTextField a1;
@@ -140,8 +135,12 @@ public class WeightConv extends JFrame {
   JCheckBox stone2;
   JCheckBox tonne1;
   JCheckBox tonne2;
+  private ButtonGroup checkBoxGroup;
+  private ButtonGroup checkBoxGroup2;
 
   WeightConv() {
+
+    
     Handler h = new Handler();
 
     JLabel l = new JLabel("WEIGHT CONVERTER");
@@ -199,6 +198,20 @@ public class WeightConv extends JFrame {
     add(stone1);
     add(stone2);
     b.addActionListener(h);
+
+    checkBoxGroup = new ButtonGroup();
+    checkBoxGroup.add(gram1);
+    checkBoxGroup.add(kg1);
+    checkBoxGroup.add(pound1);
+    checkBoxGroup.add(ounce1);
+    checkBoxGroup.add(stone1);
+
+    checkBoxGroup2 = new ButtonGroup();
+    checkBoxGroup2.add(gram2);
+    checkBoxGroup2.add(kg2);
+    checkBoxGroup2.add(pound2);
+    checkBoxGroup2.add(ounce2);
+    checkBoxGroup2.add(stone2);
 
     setSize(600, 600);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
