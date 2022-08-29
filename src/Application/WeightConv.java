@@ -19,6 +19,9 @@ public class WeightConv extends JFrame {
       double d = Integer.parseInt(s);
       if (gram1.isSelected() && gram2.isSelected()) {
         a2.setText(s);
+        /*JLabel gramToGram = new JLabel("WEIGHT CONVERTER");
+        gramToGram.setSize(40, 40);
+        gramToGram.setVisible(true);*/  //Hope to add an output of each formula on the window
       }
       if (gram1.isSelected() && kg2.isSelected()) {
         double kg = d / 1000;
@@ -164,13 +167,13 @@ public class WeightConv extends JFrame {
     a2.setBounds(240, 480, 100, 40);
     a2.setEditable(false);
     gram1 = new JCheckBox("Gram");
-    gram1.setBounds(50, 130, 140, 20);
+    gram1.setBounds(50, 130, 100, 20);
     gram2 = new JCheckBox("Gram");
-    gram2.setBounds(430, 130, 140, 20);
+    gram2.setBounds(430, 130, 100, 20);
     kg1 = new JCheckBox("KG");
-    kg1.setBounds(50, 190, 140, 20);
+    kg1.setBounds(50, 190, 100, 20);
     kg2 = new JCheckBox("KG");
-    kg2.setBounds(430, 190, 140, 20);
+    kg2.setBounds(430, 190, 100, 20);
     pound1 = new JCheckBox("Pounds");
     pound1.setBounds(50, 250, 100, 20);
     pound2 = new JCheckBox("Pounds");
@@ -218,6 +221,7 @@ public class WeightConv extends JFrame {
     setLayout(null);
     setVisible(true);
     setLocationRelativeTo(null);
+    getContentPane().setBackground(new java.awt.Color(200, 200, 200));
 
   }
 
