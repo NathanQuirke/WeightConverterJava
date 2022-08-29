@@ -2,6 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JCheckBox;
@@ -222,6 +223,8 @@ public class WeightConv extends JFrame {
     setVisible(true);
     setLocationRelativeTo(null);
     getContentPane().setBackground(new java.awt.Color(200, 200, 200));
+    ImageIcon img = new ImageIcon("./icon/icon.png"); 
+    setIconImage(img.getImage());
 
   }
 
