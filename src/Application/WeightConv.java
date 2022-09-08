@@ -16,17 +16,24 @@ public class WeightConv extends JFrame {
 
     public void actionPerformed(ActionEvent e) {
 
+      //output for formulas for each variation
+      JLabel conversion = new JLabel("WEIGHT CONVERTER");
+      conversion.setFont(conversion.getFont().deriveFont((float) 12.00));
+      conversion.setBounds(180, 250, 250, 20);
+      add(conversion);
+      //currently doesn't work as it it not overwriting the previous output, only adding another
+      /////////////////////////////////////////////
+
       String s = a1.getText();
       double d = Integer.parseInt(s);
       if (gram1.isSelected() && gram2.isSelected()) {
         a2.setText(s);
-        /*JLabel gramToGram = new JLabel("WEIGHT CONVERTER");
-        gramToGram.setSize(40, 40);
-        gramToGram.setVisible(true);*/  //Hope to add an output of each formula on the window
+        conversion.setText("Gram to gram is the same output.");
       }
       if (gram1.isSelected() && kg2.isSelected()) {
         double kg = d / 1000;
         a2.setText(Double.toString(kg));
+        conversion.setText("Gram to KG is input divided by 1000.");
       }
       if (gram1.isSelected() && pound2.isSelected()) {
         double pound = d / 453.6;
@@ -138,7 +145,7 @@ public class WeightConv extends JFrame {
   private ButtonGroup checkBoxGroup;
   private ButtonGroup checkBoxGroup2;
 
-  WeightConv() {
+  public WeightConv() {
 
     
     Handler h = new Handler();
