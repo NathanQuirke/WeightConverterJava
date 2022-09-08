@@ -31,20 +31,16 @@ public class WeightConv extends JFrame {
       if (gram1.isSelected() && pound2.isSelected()) {
         double pound = d / 453.6;
         a2.setText(Double.toString(pound));
-
       }
       if (gram1.isSelected() && ounce2.isSelected()) {
         double ounce = d / 28.35;
         a2.setText(Double.toString(ounce));
       }
-
-      // this is not correct, needs to be pushed back in decimal places, formatted
       if (gram1.isSelected() && stone2.isSelected()) {
         double stone = d / 6350;
-        a2.setText(Double.toString(stone));
+        Double.toString(stone);
+        a2.setText(String.format("%.12f", stone));
       }
-      // this is not correct, needs to be pushed back in decimal places, formatted
-
       if (kg1.isSelected() && gram2.isSelected()) {
         double gram = d * 1000;
         a2.setText(Double.toString(gram));
